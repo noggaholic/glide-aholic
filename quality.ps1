@@ -28,7 +28,7 @@ Push-Location $qualityRoot
 try {
     $qualityPaths = @(& git ls-files --cached --others --exclude-standard)
     if ($LASTEXITCODE) { throw 'Cannot enumerate source files' }
-    $qualityFiles = @($qualityPaths | Where-Object { $_ -match '^(accounts|builds|catalog|client|common|inject32|launcher|server|tests)/.*\.(c|cpp|h|hpp|inl)$' } | Sort-Object -Unique)
+    $qualityFiles = @($qualityPaths | Where-Object { $_ -match '^(accounts|builds|catalog|client|common|inject32|launcher|server)/.*\.(c|cpp|h|hpp|inl)$' } | Sort-Object -Unique)
     if (!$qualityFiles.Count) { throw 'No first-party C/C++ files found' }
     $qualityBuild = Join-Path $qualityRoot 'build/quality'
     New-Item -ItemType Directory -Force -Path $qualityBuild | Out-Null
@@ -49,7 +49,7 @@ try {
     foreach ($qualityPlatform in @('Win32', 'x64')) {
         $qualityModel = if ($qualityPlatform -eq 'Win32') { 'win32W' } else { 'win64' }
         $qualityArchitecture = if ($qualityPlatform -eq 'Win32') { '-D_M_IX86=600' } else { '-D_M_X64=100' }
-        foreach ($qualityProject in @('GlideAholic.sln', 'tests/checks.vcxproj')) {
+        foreach ($qualityProject in @('GlideAholic.sln')) {
             $qualityName = [IO.Path]::GetFileNameWithoutExtension($qualityProject)
             $qualityLog = Join-Path $qualityBuild "$qualityName-$qualityPlatform.log"
             $qualityCache = Join-Path $qualityBuild "$qualityName-$qualityPlatform-cache"

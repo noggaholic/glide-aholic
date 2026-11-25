@@ -10,7 +10,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $releaseRoot = $PSScriptRoot
 function AssertInstructionData([string[]]$Packages = @()) {
-    $auditArguments = @((Join-Path $releaseRoot 'tests/distribution_checks.py'), '--source', $releaseRoot)
+    $auditArguments = @((Join-Path $releaseRoot 'scripts/check_distribution.py'), '--source', $releaseRoot)
     foreach ($package in $Packages) { $auditArguments += @('--zip', $package) }
     & python @auditArguments
     if ($LASTEXITCODE) { throw 'Publication blocked: instruction-pattern audit failed.' }
@@ -61,7 +61,7 @@ foreach ($releasePlatform in @('Win32','x64')) {
     }
 }
 $releaseFiles.Add('bin/Win32/Release/inject32.exe')
-foreach ($releaseDocument in @('LICENSE','THIRD_PARTY_NOTICES.md','README.md','server/server.cfg','vendor/minhook/LICENSE.txt')) {
+foreach ($releaseDocument in @('LICENSE','THIRD_PARTY_NOTICES.md','README.md','docs/assets/promo.png','server/server.cfg','vendor/minhook/LICENSE.txt')) {
     $releaseFiles.Add($releaseDocument)
 }
 foreach ($releaseBuild in $releaseBuilds) {
@@ -134,7 +134,7 @@ foreach ($releasePath in $releaseTracked) {
         $releasePath -match '\.(?:pem|key|p12|pfx|dmp|pcap|pcapng|har|db|sqlite|sqlite3)$') {
         throw "Private configuration, credentials or local data cannot be packaged: $releasePath"
     }
-    if ($releasePath -notmatch '^(?:(?:common|builds|server|client|launcher|catalog|accounts|inject32|vendor|tests|\.github)/|(?:quality\.ps1|\.clang-format|README\.md|LICENSE|THIRD_PARTY_NOTICES\.md|build\.bat|release\.ps1|release-files\.txt|glide\.props|GlideAholic\.sln|\.gitignore|\.gitattributes)$)') {
+    if ($releasePath -notmatch '^(?:(?:common|builds|server|client|launcher|catalog|accounts|inject32|vendor|\.github)/|(?:scripts/check_distribution\.py|docs/assets/promo\.png|quality\.ps1|\.clang-format|README\.md|LICENSE|THIRD_PARTY_NOTICES\.md|build\.bat|release\.ps1|release-files\.txt|glide\.props|GlideAholic\.sln|\.gitignore|\.gitattributes)$)') {
         throw "Unapproved source path: $releasePath"
     }
     if ($releasePath -match '\.(?:exe|dll|dat|raw|compressed|bxml|enc|bin|pdb|zip)$' -or $releasePath -match '^(?:acceptance|research|runtime|state|data|tools|bin|build)/') {

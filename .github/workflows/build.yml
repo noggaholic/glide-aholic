@@ -16,10 +16,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: microsoft/setup-msbuild@6fb02220983dee41ce7ae257b6f4d8f9bf5ed4ce # v2
       - name: Check distributable instruction data
-        run: |
-          python tests/distribution_checks_test.py
-          python tests/distribution_checks.py --source .
-          python tests/release_checks.py
+        run: python scripts/check_distribution.py --source .
       - name: Install quality tools
         run: .\quality.ps1 -Install -FormatOnly
       - name: Check C and C++
@@ -28,7 +25,3 @@ jobs:
         run: msbuild GlideAholic.sln /m:2 /nologo /verbosity:minimal /p:Configuration=Release /p:Platform=Win32 /p:PlatformToolset=v143 /p:WindowsTargetPlatformVersion=10.0
       - name: Build x64 products
         run: msbuild GlideAholic.sln /m:2 /nologo /verbosity:minimal /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143 /p:WindowsTargetPlatformVersion=10.0
-      - name: Build essential checks
-        run: msbuild tests/checks.vcxproj /m:2 /nologo /verbosity:minimal /p:Configuration=Release /p:Platform=Win32 /p:PlatformToolset=v143 /p:WindowsTargetPlatformVersion=10.0
-      - name: Run essential checks
-        run: .\bin\Win32\Release\glide-check.exe

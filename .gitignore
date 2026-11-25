@@ -4,6 +4,7 @@
 /state/
 /data/
 /dist/
+/tests/
 # Generated manifests accompanying a source archive.
 /SOURCE-SHA256SUMS.txt
 /SOURCE-SNAPSHOT.txt

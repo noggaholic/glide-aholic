@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Glide Aholic</h1>
+<h1><img src="docs/assets/promo.png" width="960" alt="Glide Aholic — illustrated rocket logo and a gliding adventurer"></h1>
 
 <p><strong>A local exploration and multiplayer server for seven exact client builds.</strong></p>
 <p>Create a character. Explore together. Pick up where you left off.</p>
