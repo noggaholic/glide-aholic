@@ -1,24 +1,47 @@
-# Glide Aholic
+<div align="center">
 
-A local server for seven client builds.
-Author: Karliky / BugCraft
+<h1>Glide Aholic</h1>
 
-Create characters, explore maps, see other players, chat and travel between maps.
-Characters and positions are saved. Combat is experimental.
+<p><strong>A local exploration and multiplayer server for seven exact client builds.</strong></p>
+<p>Create a character. Explore together. Pick up where you left off.</p>
 
-Join [BugCraft on Discord](https://discord.gg/F9wnQ5Yaw6).
+<p>
+  <a href="https://github.com/noggaholic/glide-aholic/actions/workflows/build.yml"><img src="https://img.shields.io/github/actions/workflow/status/noggaholic/glide-aholic/build.yml?branch=main&amp;style=for-the-badge&amp;logo=githubactions&amp;logoColor=white&amp;label=Windows%20build" alt="Windows build status on main"></a>
+  <a href="#requirements"><img src="https://img.shields.io/badge/Windows-x64-0078D4?style=for-the-badge" alt="Platform: Windows x64"></a>
+  <a href="glide.props"><img src="https://img.shields.io/badge/C%2B%2B-14-00599C?style=for-the-badge&amp;logo=cplusplus&amp;logoColor=white" alt="Language: C++14"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0--or--later-16A34A?style=for-the-badge" alt="License: GPL-3.0-or-later"></a>
+</p>
+<p>
+  <a href="#supported-clients"><img src="https://img.shields.io/badge/Client%20builds-7-14B8A6?style=flat-square" alt="Seven supported client builds"></a>
+  <a href="https://discord.gg/F9wnQ5Yaw6"><img src="https://img.shields.io/badge/Discord-BugCraft-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white" alt="Join BugCraft on Discord"></a>
+</p>
 
-## Components
+<p>Created by <strong>Karliky / BugCraft</strong></p>
 
-| Artifact | Source | Purpose |
-|---|---|---|
-| `glide-server.exe` | `server/` | Handles login, characters, maps, movement, chat and commands. |
-| `glide-launcher.exe` | `launcher/` | Checks the game executable, creates a separate folder to run it, starts the game and loads the DLL. Keep it open while playing. |
-| `glide-client.dll` | `client/` | The launcher loads this into the game to connect it to Glide and apply the controls and resource handling for its build. |
-| `inject32.exe` | `inject32/` | The x64 launcher starts this helper to load the DLL into 32-bit clients. |
-| `glide-catalog.exe` | `catalog/` | `complete` adds an import pack to a game installation. `prepare` reads that installation and creates the data files Glide needs. |
-| `glide-accounts.exe` | `accounts/` | Creates and lists accounts. Use `--force` to update a password. Stop the server before using it. |
-| `glide-common.lib` | `common/` | Shared code for files, archives, encryption and networking, compiled into the programs. |
+<p>
+  <a href="#quick-start">Quick start</a> &middot;
+  <a href="#supported-clients">Supported clients</a> &middot;
+  <a href="#commands">Commands</a> &middot;
+  <a href="#project-layout">Project layout</a> &middot;
+  <a href="#troubleshooting">Troubleshooting</a>
+</p>
+
+</div>
+
+> [!NOTE]
+> Compatibility is limited to the exact executable profiles listed below; the
+> updated retail client is not supported. Supply your own game files and matching
+> import pack. Glide does not download them.
+
+## At a glance
+
+| Feature | What you can do |
+|---|---|
+| **Characters & saves** | Create and select characters; keep your progress and positions between sessions. |
+| **Multiplayer** | See other players, chat and explore together on the same build. |
+| **Map exploration** | Travel between available maps, teleport and save named locations. |
+| **Gliders & mounts** | Use the local catalog on builds that support them. |
+| **Experimental combat** | Try combat with other players using `.combat`. |
 
 ## Requirements
 
@@ -49,7 +72,9 @@ Build dates come from executable PE timestamps in UTC (`mm-dd-yyyy`). Use the sa
 build for the server and every connected client. Each build has its own accounts.
 You can visit maps whose resources are present in your game installation.
 
-## Build and run
+## Quick start
+
+**Compile → prepare data → create an account → start the server → launch the game.**
 
 Run these commands in PowerShell from the repository root. For another build,
 change `$build`, `$client` and the executable path in step 5.
@@ -78,7 +103,7 @@ Preparation stops if existing output files differ. Continue only after it
 succeeds with exit code 0.
 
 <details>
-<summary>Add the Glide data package</summary>
+<summary><strong>Preparation reports a missing Glide data package?</strong></summary>
 
 If preparation reports a missing Glide data package, supply an import pack for
 your build. It must contain `installation.txt` and the files listed in it:
@@ -111,8 +136,10 @@ With the server stopped:
 ```
 
 Enter a test password when prompted. Create each account once per build. Accounts
-and characters are saved in `state/`. Passwords are stored in plain text. Use a
-password you do not use elsewhere.
+and characters are saved in `state/`.
+
+> [!IMPORTANT]
+> Passwords are stored in plain text. Use a password you do not use elsewhere.
 
 ### 4. Start the server
 
@@ -142,50 +169,80 @@ terminal to stop it. To test another build, repeat steps 2 to 5.
 ## Commands
 
 Press **Enter** for chat. Use `.help command` for arguments, such as
-`.help worldport`. **OK** means available. **X** means unavailable.
+`.help worldport`.
+
+```text
+.help           List available commands
+.gps            Show your current map and coordinates
+.mark camp      Save your current location as "camp"
+.go camp        Return to that saved location
+```
+
+<details>
+<summary><strong>Full command reference · available on all seven builds</strong></summary>
+
+| Command | Purpose |
+|---|---|
+| `.help` | List commands or show help for one command. |
+| `.gps` | Show your map and coordinates. |
+| `.heading` | Show the direction you are facing. |
+| `.status` | Show character and server state. |
+| `.maps` | Find maps by name or ID. |
+| `.mapinfo` | Show details for a map. |
+| `.who` | List online players. |
+| `.where` | Show a player's map and coordinates. |
+| `.inspect` | Show a player's position and movement state. |
+| `.announce` | Send a message to all players. |
+| `.worldport` | Travel to a map or coordinates. |
+| `.up` | Move vertically. |
+| `.forward` / `.fw` | Move forward. |
+| `.backward` / `.bw` | Move backward. |
+| `.tele` | Travel to another player. |
+| `.bring` | Bring a player to your location. |
+| `.bringall` | Bring all other players to your location. |
+| `.tpall` | Move all players to a map. |
+| `.mark` | Save a named location. |
+| `.marks` | List your saved locations. |
+| `.unmark` | Delete a saved location. |
+| `.go` | Travel to a saved location. |
+| `.timeofday` | Show or set the shared time of day. |
+| `.combat` | Show or toggle experimental combat with other players. |
+
+</details>
+
+### Commands by build
+
+**✓** Available · **—** Unavailable
 
 | Command | Purpose | 14075 | 14422 | 14505 | 14812 | 49284 | 167409 | 204489 |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| `.help` | List commands or show help for one command. | OK | OK | OK | OK | OK | OK | OK |
-| `.gps` | Show your map and coordinates. | OK | OK | OK | OK | OK | OK | OK |
-| `.heading` | Show the direction you are facing. | OK | OK | OK | OK | OK | OK | OK |
-| `.status` | Show character and server state. | OK | OK | OK | OK | OK | OK | OK |
-| `.maps` | Find maps by name or ID. | OK | OK | OK | OK | OK | OK | OK |
-| `.mapinfo` | Show details for a map. | OK | OK | OK | OK | OK | OK | OK |
-| `.who` | List online players. | OK | OK | OK | OK | OK | OK | OK |
-| `.where` | Show a player's map and coordinates. | OK | OK | OK | OK | OK | OK | OK |
-| `.inspect` | Show a player's position and movement state. | OK | OK | OK | OK | OK | OK | OK |
-| `.announce` | Send a message to all players. | OK | OK | OK | OK | OK | OK | OK |
-| `.worldport` | Travel to a map or coordinates. | OK | OK | OK | OK | OK | OK | OK |
-| `.up` | Move vertically. | OK | OK | OK | OK | OK | OK | OK |
-| `.forward` / `.fw` | Move forward. | OK | OK | OK | OK | OK | OK | OK |
-| `.backward` / `.bw` | Move backward. | OK | OK | OK | OK | OK | OK | OK |
-| `.tele` | Travel to another player. | OK | OK | OK | OK | OK | OK | OK |
-| `.bring` | Bring a player to your location. | OK | OK | OK | OK | OK | OK | OK |
-| `.bringall` | Bring all other players to your location. | OK | OK | OK | OK | OK | OK | OK |
-| `.tpall` | Move all players to a map. | OK | OK | OK | OK | OK | OK | OK |
-| `.mark` | Save a named location. | OK | OK | OK | OK | OK | OK | OK |
-| `.marks` | List your saved locations. | OK | OK | OK | OK | OK | OK | OK |
-| `.unmark` | Delete a saved location. | OK | OK | OK | OK | OK | OK | OK |
-| `.go` | Travel to a saved location. | OK | OK | OK | OK | OK | OK | OK |
-| `.timeofday` | Show or set the shared time of day. | OK | OK | OK | OK | OK | OK | OK |
-| `.combat` | Show or toggle experimental combat with other players. | OK | OK | OK | OK | OK | OK | OK |
-| `.glider` | Choose a glider from the local catalog. | X | X | X | X | OK | OK | OK |
-| `.mount` | Ride a mount from the local catalog. | X | X | X | X | X | OK | OK |
-| `.unmount` | Dismount. | X | X | X | X | X | OK | OK |
+| `.glider` | Choose a glider from the local catalog. | — | — | — | — | ✓ | ✓ | ✓ |
+| `.mount` | Ride a mount from the local catalog. | — | — | — | — | — | ✓ | ✓ |
+| `.unmount` | Dismount. | — | — | — | — | — | ✓ | ✓ |
 
 Glider and mount IDs must exist in the local catalog.
 
 ## Troubleshooting
 
-- **Compilation fails:** check that v141 x86/x64 and SDK 10.0.17763.0 are installed.
-- **Preparation fails:** check the data package, archive and browser files for
-  your build. Fix the error before launching.
-- **Executable rejected:** check that its hash matches a profile in
-  `builds/executable_profiles.cpp`.
-- **Login fails:** check that the account, server and client use the same build.
-- **Map fails to load:** check that your installation contains the map's resources.
-  A map can appear in the catalog even when some files are missing.
+| Problem | What to check |
+|---|---|
+| **Compilation fails** | Install MSVC v141 x86/x64 and Windows SDK 10.0.17763.0. |
+| **Preparation fails** | Check the data package, archive and browser files for your build. Fix the error before launching. |
+| **Executable rejected** | Its hash must match a profile in [`builds/executable_profiles.cpp`](builds/executable_profiles.cpp). |
+| **Login fails** | The account, server and client must use the same build. |
+| **Map fails to load** | The installation must contain the map's resources. A map can appear in the catalog even when some files are missing. |
+
+## Project layout
+
+| Artifact | Source | Purpose |
+|---|---|---|
+| `glide-server.exe` | `server/` | Handles login, characters, maps, movement, chat and commands. |
+| `glide-launcher.exe` | `launcher/` | Checks the game executable, creates a separate folder to run it, starts the game and loads the DLL. Keep it open while playing. |
+| `glide-client.dll` | `client/` | The launcher loads this into the game to connect it to Glide and apply the controls and resource handling for its build. |
+| `inject32.exe` | `inject32/` | The x64 launcher starts this helper to load the DLL into 32-bit clients. |
+| `glide-catalog.exe` | `catalog/` | `complete` adds an import pack to a game installation. `prepare` reads that installation and creates the data files Glide needs. |
+| `glide-accounts.exe` | `accounts/` | Creates and lists accounts. Use `--force` to update a password. Stop the server before using it. |
+| `glide-common.lib` | `common/` | Shared code for files, archives, encryption and networking, compiled into the programs. |
 
 <details>
 <summary><strong>Repository files and local folders</strong></summary>
@@ -225,6 +282,11 @@ These folders are created locally and ignored by Git:
 `.git/` stores Git history and repository settings.
 
 </details>
+
+## Community
+
+Join [BugCraft on Discord](https://discord.gg/F9wnQ5Yaw6) to talk about the project,
+or [open an issue](https://github.com/noggaholic/glide-aholic/issues) to report a bug.
 
 ## License
 
