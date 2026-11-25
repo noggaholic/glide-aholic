@@ -1,0 +1,6 @@
+# Installed July client contains its own EXE and DAT only.
+# Documents and resource indices load from data/14812/content.
+format=1
+build=14812
+executable=Gw2.exe
+archive=Gw2.dat

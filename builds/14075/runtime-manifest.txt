@@ -1,0 +1,6 @@
+# Installed April client: private EXE, read-only original DAT.
+# Own documents and resource indices load from data/14075.
+format=1
+build=14075
+executable=Gw2.exe
+archive=Gw2.dat

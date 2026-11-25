@@ -1,68 +1,62 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# Build directories
-[Bb]uild/
-[Bb]uild-*/
-cmake-build-*/
-
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
-
-# Temporary files
-*.tmp
+/bin/
+/build/
+/runtime/
+/state/
+/data/
+/dist/
+# Generated manifests accompanying a source archive.
+/SOURCE-SHA256SUMS.txt
+/SOURCE-SNAPSHOT.txt
+/dependencies/
+/.vs/
+*.user
 *.log
-*.bak
-*.swp
+*.pdb
+*.obj
+__pycache__/
 
-# vcpkg
-vcpkg_installed/
+# Local configuration, credentials and personal tooling.
+.env
+.env.*
+!.env.example
+!.env.sample
+.npmrc
+.pypirc
+.netrc
+.ssh/
+.aws/
+.azure/
+.gcloud/
+.codex/
+.claude/
+.agents/
+.idea/
+.vscode/
+AGENTS.md
+MEMORY.md
+credentials
+credentials.*
+secrets
+secrets.*
+id_rsa*
+id_ed25519*
+*.pem
+*.key
+*.p12
+*.pfx
+*.dmp
+*.pcap
+*.pcapng
+*.har
+*.db
+*.sqlite
+*.sqlite3
 
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
+# Local game inputs and extracted content.
+/imports/
+/installations/
+*.dat
+*.bxml
+*.raw
+*.compressed
+*.enc

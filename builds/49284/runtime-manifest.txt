@@ -1,0 +1,13 @@
+format=2
+build=49284
+executable=Gw2.exe
+archive=Gw2.dat
+package=browser\CoherentUI_Host.exe|bin\CoherentUI_Host.exe|64ccf3640a21942515ba697ad7e90de19746ccfb0263aef1ffb2f84a5a51b0a7
+package=browser\CoherentUI.dll|bin\CoherentUI.dll|8ed19f7aae3eab8434b2c0ea883ad73b28cb641e2128277bb24aef967458e713
+package=browser\icudt.dll|bin\icudt.dll|099f23da03048a60a03d0e6df1492618dcdfb3ffcae1c0d4626ea917c22f3883
+package=browser\libEGL.dll|bin\libEGL.dll|77bdf31425ca814f580a0e4ea6ec3ac98b3e73b77c0b42eaec28fedb437aa179
+package=browser\libGLESv2.dll|bin\libGLESv2.dll|984b4dcb2f3d5b612b755b973537bfd5ddd6f3904a94453b71a0cdfbe3aa560d
+package=browser\d3dcompiler_43.dll|bin\d3dcompiler_43.dll|2f23182ec6f4889397ac4bf03d62536136c5bdba825c7d2c4ef08c827f3a8a1c
+package=browser\ffmpegsumo.dll|bin\ffmpegsumo.dll|ba22b8bd05fc849953a11aaf0b69a34609f1c32192ca1f0dbfe6f05ce467a74c
+package=browser\browser-bootstrap.js|bin\browser-bootstrap.js|e035cbf4c1ac240fbce35475044630d7083dc790610e38cfa26e4d3c9765bcdb
+child=bin\CoherentUI_Host.exe

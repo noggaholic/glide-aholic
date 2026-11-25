@@ -1,0 +1,63 @@
+#include "startup_symbols.h"
+
+namespace glide {
+namespace april14075 {
+const std::vector<StartupSymbol>& StartupSymbols() {
+    static const std::vector<StartupSymbol> symbols = {
+        {"beta_open_local_dat", {"beta_open_local_dat"}},
+        {"beta_archive_write_file_raw", {"beta_archive_write_file_raw"}},
+        {"beta_msgconn_rc4", {"beta_msgconn_rc4"}},
+        {"beta_content_key_derive", {"beta_content_key_derive"}},
+        {"beta_content_open_packs", {"beta_content_open_packs"}},
+        {"beta_content_manifest_reader", {"beta_content_manifest_reader"}},
+        {"beta_content_record_lookup", {"beta_content_record_lookup"}},
+        {"beta_content_object_parse", {"beta_content_object_parse"}},
+        {"beta_item_armor_lookup", {"beta_item_armor_lookup"}},
+        {"beta_item_uid_lookup", {"beta_item_uid_lookup"}},
+        {"beta_apply_character_summary", {"beta_apply_character_summary"}},
+        {"beta_character_summary_validate", {"beta_character_summary_validate"}},
+        {"beta_map_def_lookup", {"beta_map_def_lookup"}},
+        {"beta_world_map_select_floor", {"beta_world_map_select_floor"}},
+        {"beta_world_map_transform", {"beta_world_map_transform"}},
+        {"beta_content_resolve_refs", {"beta_content_resolve_refs"}},
+        {"beta_account_login_result", {"beta_account_login_result"}},
+        {"beta_char_select_create", {"beta_char_select_create"}},
+        {"beta_char_select_dispatch", {"beta_char_select_dispatch"}},
+        {"beta_char_select_wrapper", {"beta_char_select_wrapper"}},
+        {"beta_char_select_list_dispatch", {"beta_char_select_list_dispatch"}},
+        {"beta_char_select_list_wrapper", {"beta_char_select_list_wrapper"}},
+        {"beta_char_select_empty_slot", {"beta_char_select_empty_slot"}},
+        {"beta_gc_trans_construct", {"beta_gc_trans_construct"}},
+        {"beta_gc_game_redirect_start", {"beta_gc_game_redirect_start"}},
+        {"beta_gc_game_join_start", {"beta_gc_game_join_start"}},
+        {"beta_gc_game_join_result", {"beta_gc_game_join_result"}},
+        {"beta_game_load_disconnect_callback", {"beta_game_load_disconnect_callback"}},
+        {"beta_agent_player_core_stats", {"beta_agent_player_core_stats"}},
+        {"beta_controlled_character_install", {"beta_controlled_character_install"}},
+        {"beta_set_local_controlled_agent", {"beta_set_local_controlled_agent"}},
+        {"beta_validate_client_control", {"beta_validate_client_control"}},
+        {"beta_msg_deserialize_fields", {"beta_msg_deserialize_fields"}},
+        {"beta_view_set_state", {"beta_view_set_state"}},
+        {"beta_agent_world_activate", {"beta_agent_world_activate"}},
+        {"beta_content_type_24_lookup", {"beta_content_type_24_lookup"}},
+        {"beta_profession_def_lookup", {"beta_profession_def_lookup"}},
+        {"beta_event_dispatch", {"beta_event_dispatch"}},
+        {"beta_dx9_create_device", {"beta_dx9_create_device"}},
+        {"beta_float_to_uint22", {"beta_float_to_uint22"}},
+        {"beta_model_archive_read", {"beta_model_archive_read"}},
+        {"beta_archive_file_availability", {"beta_archive_file_availability"}},
+        {"beta_archive_reference_resolve", {"beta_archive_reference_resolve"}},
+        {"beta_archive_reference_decode", {"beta_archive_reference_decode"}},
+        {"beta_map_resource_parse", {"beta_map_resource_parse"}},
+        {"beta_map_chunk_lookup", {"beta_map_chunk_lookup"}},
+        {"beta_map_load_completion", {"beta_map_load_completion"}},
+        {"beta_map_component_step", {"beta_map_component_step"}},
+        {"beta_terrain_component_create", {"beta_terrain_component_create"}},
+        {"beta_block_component_create", {"beta_block_component_create"}},
+        {"beta_local_manifest_initialize", {"beta_local_manifest_initialize"}},
+        {"beta_prepare_archive", {"beta_prepare_archive"}},
+    };
+    return symbols;
+}
+} // namespace april14075
+} // namespace glide

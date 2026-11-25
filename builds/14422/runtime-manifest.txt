@@ -1,0 +1,5 @@
+# Installed June 7 client; own documents are loaded from data/14422/content.
+format=1
+build=14422
+executable=Gw2.exe
+archive=Gw2.dat

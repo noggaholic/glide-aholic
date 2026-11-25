@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32"><Configuration>Debug</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32"><Configuration>Release</Configuration><Platform>Win32</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals"><ProjectGuid>{B49432E5-44B8-4A61-87CC-685DF95AD546}</ProjectGuid><RootNamespace>glide</RootNamespace><WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration"><ConfigurationType>Application</ConfigurationType><UseDebugLibraries>true</UseDebugLibraries><PlatformToolset>v141</PlatformToolset><CharacterSet>Unicode</CharacterSet></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration"><ConfigurationType>Application</ConfigurationType><UseDebugLibraries>true</UseDebugLibraries><PlatformToolset>v141</PlatformToolset><CharacterSet>Unicode</CharacterSet></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration"><ConfigurationType>Application</ConfigurationType><UseDebugLibraries>false</UseDebugLibraries><PlatformToolset>v141</PlatformToolset><CharacterSet>Unicode</CharacterSet></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration"><ConfigurationType>Application</ConfigurationType><UseDebugLibraries>false</UseDebugLibraries><PlatformToolset>v141</PlatformToolset><CharacterSet>Unicode</CharacterSet></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets"><Import Project="..\glide.props" /></ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="..\builds\49284\server\auth_data.cpp"><ObjectFileName>$(IntDir)auth_data_49284.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\world_entry.cpp"><ObjectFileName>$(IntDir)world_entry_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\profile.cpp"><ObjectFileName>$(IntDir)profile_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\inventory_state.cpp"><ObjectFileName>$(IntDir)inventory_state_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\motion.cpp"><ObjectFileName>$(IntDir)motion_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\motion_state.cpp"><ObjectFileName>$(IntDir)motion_state_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\world_actions.cpp"><ObjectFileName>$(IntDir)world_actions_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\chat.cpp"><ObjectFileName>$(IntDir)chat_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\game.cpp"><ObjectFileName>$(IntDir)game_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\world_actor.cpp"><ObjectFileName>$(IntDir)world_actor_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\game_wire.cpp"><ObjectFileName>$(IntDir)game_wire_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\bootstrap.cpp"><ObjectFileName>$(IntDir)bootstrap_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\auth_summary.cpp"><ObjectFileName>$(IntDir)auth_summary_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\auth_account.cpp"><ObjectFileName>$(IntDir)auth_account_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\auth_response.cpp"><ObjectFileName>$(IntDir)auth_response_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\character_catalog.cpp"><ObjectFileName>$(IntDir)character_catalog_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\auth_flow.cpp"><ObjectFileName>$(IntDir)auth_flow_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\game_initializer.cpp"><ObjectFileName>$(IntDir)game_initializer_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\character_create.cpp"><ObjectFileName>$(IntDir)character_create_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\create.cpp"><ObjectFileName>$(IntDir)create_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\auth_request.cpp"><ObjectFileName>$(IntDir)auth_request_14812.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14812\server\auth_route.cpp"><ObjectFileName>$(IntDir)auth_route_14812.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\auth_flow.cpp"><ObjectFileName>$(IntDir)auth_flow_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\auth_request.cpp"><ObjectFileName>$(IntDir)auth_request_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\auth_response.cpp"><ObjectFileName>$(IntDir)auth_response_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\bootstrap.cpp"><ObjectFileName>$(IntDir)bootstrap_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\character_catalog.cpp"><ObjectFileName>$(IntDir)character_catalog_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\character_create.cpp"><ObjectFileName>$(IntDir)character_create_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\chat.cpp"><ObjectFileName>$(IntDir)chat_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\control_request.cpp"><ObjectFileName>$(IntDir)control_request_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\create.cpp"><ObjectFileName>$(IntDir)create_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\entry_steps.cpp"><ObjectFileName>$(IntDir)entry_steps_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\game.cpp"><ObjectFileName>$(IntDir)game_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\game_initializer.cpp"><ObjectFileName>$(IntDir)game_initializer_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\game_wire.cpp"><ObjectFileName>$(IntDir)game_wire_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\glider.cpp"><ObjectFileName>$(IntDir)glider_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\map_catalog.cpp"><ObjectFileName>$(IntDir)map_catalog_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\motion.cpp"><ObjectFileName>$(IntDir)motion_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\motion_state.cpp"><ObjectFileName>$(IntDir)motion_state_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\profile.cpp"><ObjectFileName>$(IntDir)profile_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\inventory_state.cpp"><ObjectFileName>$(IntDir)inventory_state_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\world_actions.cpp"><ObjectFileName>$(IntDir)world_actions_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\world_actor.cpp"><ObjectFileName>$(IntDir)world_actor_49284.obj</ObjectFileName></ClCompile>
+<ClCompile Include="..\builds\49284\server\world_entry.cpp"><ObjectFileName>$(IntDir)world_entry_49284.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\server\src\main.cpp" />
+    <ClCompile Include="..\server\src\server.cpp" />
+    <ClCompile Include="src\sessions.cpp" />
+    <ClCompile Include="src\world_entry.cpp" />
+    <ClCompile Include="src\world_actions.cpp" />
+    <ClCompile Include="..\server\src\state_store.cpp" />
+    <ClCompile Include="..\server\src\sts_handler.cpp" />
+    <ClCompile Include="..\server\src\auth_session.cpp" />
+    <ClCompile Include="..\server\src\create_session.cpp" />
+    <ClCompile Include="..\server\src\game_session.cpp" />
+    <ClCompile Include="..\server\src\commands.cpp" />
+    <ClCompile Include="..\builds\204489\server\profile.cpp" />
+    <ClCompile Include="..\builds\204489\server\auth.cpp" />
+    <ClCompile Include="..\builds\204489\server\create.cpp" />
+    <ClCompile Include="..\builds\204489\server\bootstrap.cpp" />
+    <ClCompile Include="..\builds\204489\server\equipment_catalog.cpp"><ObjectFileName>$(IntDir)equipment_catalog_204489.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\204489\server\weapon_actions.cpp"><ObjectFileName>$(IntDir)weapon_actions_204489.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\204489\server\inventory_state.cpp"><ObjectFileName>$(IntDir)inventory_state_204489.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\204489\server\wire.cpp" />
+    <ClCompile Include="..\builds\204489\server\game.cpp" />
+    <ClCompile Include="..\builds\14505\server\profile.cpp"><ObjectFileName>$(IntDir)profile_14505.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14505\server\auth_request.cpp" />
+    <ClCompile Include="..\builds\14505\server\mission.cpp" />
+    <ClCompile Include="..\builds\14505\server\map_geometry.cpp" />
+    <ClCompile Include="..\builds\14505\server\world_actor.cpp" />
+    <ClCompile Include="..\builds\14505\server\world_managers.cpp" />
+    <ClCompile Include="..\builds\14505\server\entry_steps.cpp" />
+    <ClCompile Include="..\builds\14505\server\bootstrap.cpp"><ObjectFileName>$(IntDir)bootstrap_14505.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14505\server\world_environment.cpp" />
+    <ClCompile Include="..\builds\14505\server\motion.cpp" />
+    <ClCompile Include="..\builds\14505\server\motion_state.cpp" />
+    <ClCompile Include="..\builds\14505\server\skill_catalog.cpp" />
+    <ClCompile Include="..\builds\14505\server\game_request.cpp" />
+    <ClCompile Include="..\builds\14505\server\game_reply.cpp" />
+    <ClCompile Include="..\builds\14505\server\game.cpp"><ObjectFileName>$(IntDir)game_14505.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14505\server\game_wire.cpp" />
+    <ClCompile Include="..\builds\14505\server\auth_response.cpp" />
+    <ClCompile Include="..\builds\14505\server\character_catalog.cpp" />
+    <ClCompile Include="..\builds\14422\server\character_catalog.cpp"><ObjectFileName>$(IntDir)character_catalog_14422.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\character_catalog.cpp"><ObjectFileName>$(IntDir)character_catalog_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\create.cpp"><ObjectFileName>$(IntDir)create_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\auth_request.cpp"><ObjectFileName>$(IntDir)auth_request_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\auth_response.cpp"><ObjectFileName>$(IntDir)auth_response_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\auth_flow.cpp"><ObjectFileName>$(IntDir)auth_flow_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\map_geometry.cpp"><ObjectFileName>$(IntDir)map_geometry_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\mission.cpp"><ObjectFileName>$(IntDir)mission_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\world_actor.cpp"><ObjectFileName>$(IntDir)world_actor_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\world_managers.cpp"><ObjectFileName>$(IntDir)world_managers_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\game_request.cpp"><ObjectFileName>$(IntDir)game_request_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\game_reply.cpp"><ObjectFileName>$(IntDir)game_reply_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\game_wire.cpp"><ObjectFileName>$(IntDir)game_wire_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\motion.cpp"><ObjectFileName>$(IntDir)motion_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\motion_state.cpp"><ObjectFileName>$(IntDir)motion_state_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\world_environment.cpp"><ObjectFileName>$(IntDir)world_environment_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\game.cpp"><ObjectFileName>$(IntDir)game_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14422\server\auth_flow.cpp"><ObjectFileName>$(IntDir)auth_flow_14422.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14422\server\create.cpp"><ObjectFileName>$(IntDir)create_14422.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14422\server\map_geometry.cpp"><ObjectFileName>$(IntDir)map_geometry_14422.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14422\server\bootstrap.cpp"><ObjectFileName>$(IntDir)bootstrap_14422.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14422\server\game_wire.cpp"><ObjectFileName>$(IntDir)game_wire_14422.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14422\server\game.cpp"><ObjectFileName>$(IntDir)game_14422.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14505\server\auth_flow.cpp"><ObjectFileName>$(IntDir)auth_flow_14505.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14505\server\create.cpp"><ObjectFileName>$(IntDir)create_14505.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\server_registry.cpp" />
+    <ClCompile Include="..\builds\14422\server\profile.cpp"><ObjectFileName>$(IntDir)profile_14422.obj</ObjectFileName></ClCompile>
+  </ItemGroup>
+  <ItemGroup><ProjectReference Include="..\common\common.vcxproj"><Project>{0F714376-F621-5C67-BD6D-17C99D374962}</Project></ProjectReference></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\builds\14075\server\entry_steps.cpp"><ObjectFileName>$(IntDir)entry_steps_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\bootstrap.cpp"><ObjectFileName>$(IntDir)bootstrap_14075.obj</ObjectFileName></ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ItemGroup>
+    <ClCompile Include="..\builds\14075\server\profile.cpp"><ObjectFileName>$(IntDir)profile_14075.obj</ObjectFileName></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\builds\14075\server\skill_request.cpp"><ObjectFileName>$(IntDir)skill_request_14075.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\14075\server\inventory_wire.cpp"><ObjectFileName>$(IntDir)inventory_wire_14075.obj</ObjectFileName></ClCompile>
+  </ItemGroup>
+  <ItemGroup><ClCompile Include="..\builds\14075\server\inventory_state.cpp"><ObjectFileName>$(IntDir)inventory_state_14075.obj</ObjectFileName></ClCompile></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\builds\167409\server\wire.cpp"><ObjectFileName>$(IntDir)wire_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\protocol.cpp"><ObjectFileName>$(IntDir)protocol_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\auth_request.cpp"><ObjectFileName>$(IntDir)auth_request_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\auth_flow.cpp"><ObjectFileName>$(IntDir)auth_flow_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\bootstrap.cpp"><ObjectFileName>$(IntDir)bootstrap_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\equipment_catalog.cpp"><ObjectFileName>$(IntDir)equipment_catalog_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\inventory_state.cpp"><ObjectFileName>$(IntDir)inventory_state_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\game.cpp"><ObjectFileName>$(IntDir)game_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\auth.cpp"><ObjectFileName>$(IntDir)auth_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\create.cpp"><ObjectFileName>$(IntDir)create_167409.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="..\builds\167409\server\profile.cpp"><ObjectFileName>$(IntDir)profile_167409.obj</ObjectFileName></ClCompile>
+  </ItemGroup>
+  <ItemGroup><ClCompile Include="..\builds\14505\server\inventory_state.cpp"><ObjectFileName>$(IntDir)inventory_state_14505.obj</ObjectFileName></ClCompile></ItemGroup>
+  <ItemGroup><ClCompile Include="src/command_session.cpp" /></ItemGroup>
+</Project>
