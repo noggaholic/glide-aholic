@@ -2,6 +2,7 @@
 #include "glide/profile/auth_flow.h"
 #include "glide/profile/character_codec.h"
 #include <functional>
+#include <memory>
 
 namespace glide {
 namespace china167409 {
