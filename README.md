@@ -178,37 +178,34 @@ Press **Enter** for chat. Use `.help command` for arguments, such as
 .go camp        Return to that saved location
 ```
 
-<details>
-<summary><strong>Full command reference · available on all seven builds</strong></summary>
+### Commands available on all seven builds
 
 | Command | Purpose |
 |---|---|
-| `.help` | List commands or show help for one command. |
+| `.help [command]` | List commands or show help for one command. |
 | `.gps` | Show your map and coordinates. |
 | `.heading` | Show the direction you are facing. |
 | `.status` | Show character and server state. |
-| `.maps` | Find maps by name or ID. |
-| `.mapinfo` | Show details for a map. |
+| `.maps [text or ID] [--page N]` | Find maps by name or ID. |
+| `.mapinfo [mapId]` | Show details for a map. |
 | `.who` | List online players. |
-| `.where` | Show a player's map and coordinates. |
-| `.inspect` | Show a player's position and movement state. |
-| `.announce` | Send a message to all players. |
-| `.worldport` | Travel to a map or coordinates. |
-| `.up` | Move vertically. |
-| `.forward` / `.fw` | Move forward. |
-| `.backward` / `.bw` | Move backward. |
-| `.tele` | Travel to another player. |
-| `.bring` | Bring a player to your location. |
+| `.where <player name>` | Show a player's map and coordinates. |
+| `.inspect <player name>` | Show a player's position and movement state. |
+| `.announce <message>` | Send a message to all players. |
+| `.worldport <x y z>`<br>`.worldport <mapId> [x y z]` | Travel to a map or coordinates. |
+| `.up [heightDelta]` | Move vertically. |
+| `.forward [distance]` / `.fw [distance]` | Move forward. |
+| `.backward [distance]` / `.bw [distance]` | Move backward. |
+| `.tele <player name>` | Travel to another player. |
+| `.bring <player name>` | Bring a player to your location. |
 | `.bringall` | Bring all other players to your location. |
-| `.tpall` | Move all players to a map. |
-| `.mark` | Save a named location. |
+| `.tpall <mapId> [x y z]` | Move all players to a map. |
+| `.mark <name>` | Save a named location. |
 | `.marks` | List your saved locations. |
-| `.unmark` | Delete a saved location. |
-| `.go` | Travel to a saved location. |
-| `.timeofday` | Show or set the shared time of day. |
-| `.combat` | Show or toggle experimental combat with other players. |
-
-</details>
+| `.unmark <name>` | Delete a saved location. |
+| `.go <name>` | Travel to a saved location. |
+| `.timeofday [HH:MM[:SS]]` | Show or set the shared time of day. |
+| `.combat [on\|off]` | Show or toggle experimental combat with other players. |
 
 ### Commands by build
 
@@ -216,8 +213,8 @@ Press **Enter** for chat. Use `.help command` for arguments, such as
 
 | Command | Purpose | 14075 | 14422 | 14505 | 14812 | 49284 | 167409 | 204489 |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| `.glider` | Choose a glider from the local catalog. | — | — | — | — | ✓ | ✓ | ✓ |
-| `.mount` | Ride a mount from the local catalog. | — | — | — | — | — | ✓ | ✓ |
+| `.glider <designId>` | Choose a glider from the local catalog. | — | — | — | — | ✓ | ✓ | ✓ |
+| `.mount <skinId>` | Ride a mount from the local catalog. | — | — | — | — | — | ✓ | ✓ |
 | `.unmount` | Dismount. | — | — | — | — | — | ✓ | ✓ |
 
 Glider and mount IDs must exist in the local catalog.
