@@ -40,6 +40,8 @@ Combat is experimental.
 | :---: | :---: | :---: |
 | <a href="docs/screenshots/49284/character-selection.png"><img src="docs/screenshots/49284/character-selection.png" width="180" alt="Build 49284 character selection"></a><br><a href="docs/screenshots/49284/in-game.png"><img src="docs/screenshots/49284/in-game.png" width="180" alt="Build 49284 in game"></a> | <a href="docs/screenshots/167409/character-selection.png"><img src="docs/screenshots/167409/character-selection.png" width="180" alt="Build 167409 character selection"></a><br><a href="docs/screenshots/167409/in-game.png"><img src="docs/screenshots/167409/in-game.png" width="180" alt="Build 167409 in game"></a> | <a href="docs/screenshots/204489/character-selection.png"><img src="docs/screenshots/204489/character-selection.png" width="180" alt="Build 204489 character selection"></a><br><a href="docs/screenshots/204489/in-game.png"><img src="docs/screenshots/204489/in-game.png" width="180" alt="Build 204489 in game"></a> |
 
+</div>
+
 ## Supported clients
 
 | Build | Build date | Executable | Gliding | Mounts |
@@ -62,8 +64,6 @@ installation, even if they appear in the catalog.
 
 ## Requirements
 
-<div align="left">
-
 - Windows x64.
 - A supported game installation with its executable, `Gw2.dat` and browser files.
   Build 49284 also needs compatible Coherent UI components.
@@ -71,8 +71,6 @@ installation, even if they appear in the catalog.
   [`complete`](#missing-local-data).
 - To compile, Visual Studio 2017 Build Tools or a later Visual Studio installation
   with MSVC v141 for x86/x64 and Windows SDK 10.0.17763.0. MinHook is included.
-
-</div>
 
 Game files and import packs are supplied separately. Glide does not download them.
 
@@ -83,19 +81,14 @@ Run the commands in PowerShell from the repository root. The example uses build
 
 ### 1. Compile
 
-<div align="left">
-
 ```powershell
 .\build.bat Release x64
 ```
 
-</div>
 This builds both Win32 and x64 programs. Keep `bin/Win32/Release/` and
 `bin/x64/Release/` together. Skip compilation when using the Windows binary package.
 
 ### 2. Prepare data
-
-<div align="left">
 
 ```powershell
 $build = 204489
@@ -104,7 +97,6 @@ $client = 'C:\Games\GW2-204489\Gw2-64.exe'
 .\bin\x64\Release\glide-catalog.exe prepare "$client" --build $build --out data
 ```
 
-</div>
 `prepare` reads the completed installation offline and writes `data/<build>/`
 without changing the installation. The game installation must remain available
 when playing. Existing output files are accepted only if their contents match.
@@ -116,25 +108,19 @@ If preparation reports missing local data, `complete` can add the matching impor
 pack to a copy of the installation. The pack must contain `installation.txt` and
 every file listed in it:
 
-<div align="left">
-
 ```text
 format=1
 build=<build-number>
 data=<relative-path>|<byte-size>|<lowercase-sha256>
 ```
 
-</div>
 Choose a new output directory outside the source installation and import pack,
 with enough space for a full copy of the game archive:
-
-<div align="left">
 
 ```powershell
 .\bin\x64\Release\glide-catalog.exe complete "$client" --inputs "C:\GW2-inputs\$build" --out "C:\Games\GW2-$build-complete"
 ```
 
-</div>
 The source installation is unchanged. Set `$client` to the executable in the new
 copy and run `prepare` again. Use that executable when launching too. If completion
 is interrupted, rerun the same command to resume the `.pending` directory.
@@ -143,13 +129,10 @@ is interrupted, rerun the same command to resume the `.pending` directory.
 
 With the server stopped:
 
-<div align="left">
-
 ```powershell
 .\bin\x64\Release\glide-accounts.exe --build $build --email player@local.test
 ```
 
-</div>
 Enter a password at the prompt. Accounts, characters and saved positions are stored
 in `state/`. Add `--force` to update an existing password, or use `--list` with
 `--build` to list accounts.
@@ -158,13 +141,10 @@ in `state/`. Add `--force` to update an existing password, or use `--list` with
 
 ### 4. Start the server
 
-<div align="left">
-
 ```powershell
 .\bin\x64\Release\glide-server.exe --config server\server.cfg --build $build
 ```
 
-</div>
 The default address is `127.0.0.1:6112`.
 [`server/server.cfg`](server/server.cfg) sets the address, port, data folder,
 save folder and log file.
@@ -173,13 +153,10 @@ save folder and log file.
 
 In a second PowerShell terminal at the repository root:
 
-<div align="left">
-
 ```powershell
 .\bin\x64\Release\glide-launcher.exe 'C:\Games\GW2-204489\Gw2-64.exe' --windowed --server 127.0.0.1:6112
 ```
 
-</div>
 Log in with the local account, then create or select a character. Keep the launcher
 open while playing. Closing it or pressing Ctrl+C in its terminal closes its clients.
 
@@ -284,5 +261,3 @@ Original project code is licensed under [GPL-3.0-or-later](LICENSE).
 Guild Wars 2 and its assets, including the artwork shown in screenshots, belong to
 their respective owners and are not covered by the project's GPL license. Glide
 Aholic is unofficial and is not affiliated with ArenaNet or NCSOFT.
-
-</div>
