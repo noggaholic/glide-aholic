@@ -38,3 +38,6 @@ Guild Wars 2 executables, archives, extracted assets and proprietary middleware
 are not covered by this project's GPL license and are not included in the source
 distribution. Users must supply the matching original files and any documented
 runtime dependencies separately.
+
+Game artwork shown in documentation screenshots belongs to its respective owners
+and is not covered by the project's GPL license.
