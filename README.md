@@ -24,6 +24,7 @@ Combat is experimental.
   <a href="#supported-clients">Supported clients</a> &middot;
   <a href="#setup">Setup</a> &middot;
   <a href="#commands">Commands</a> &middot;
+  <a href="#faq">FAQ</a> &middot;
   <a href="#components">Components</a> &middot;
   <a href="#development">Development</a>
 </p>
@@ -32,11 +33,11 @@ Combat is experimental.
 
 ## Screenshots
 
-| Build 14075 | Build 14422 | Build 14505 | Build 14812 |
+| Build 14075<br>04-25-2012 | Build 14422<br>06-07-2012 | Build 14505<br>06-15-2012 | Build 14812<br>07-20-2012 |
 | :---: | :---: | :---: | :---: |
 | <a href="docs/screenshots/14075/character-selection.png"><img src="docs/screenshots/14075/character-selection.png" width="180" alt="Build 14075 character selection"></a><br><a href="docs/screenshots/14075/in-game.png"><img src="docs/screenshots/14075/in-game.png" width="180" alt="Build 14075 in game"></a> | <a href="docs/screenshots/14422/character-selection.png"><img src="docs/screenshots/14422/character-selection.png" width="180" alt="Build 14422 character selection"></a><br><a href="docs/screenshots/14422/in-game.png"><img src="docs/screenshots/14422/in-game.png" width="180" alt="Build 14422 in game"></a> | <a href="docs/screenshots/14505/character-selection.png"><img src="docs/screenshots/14505/character-selection.png" width="180" alt="Build 14505 character selection"></a><br><a href="docs/screenshots/14505/in-game.png"><img src="docs/screenshots/14505/in-game.png" width="180" alt="Build 14505 in game"></a> | <a href="docs/screenshots/14812/character-selection.png"><img src="docs/screenshots/14812/character-selection.png" width="180" alt="Build 14812 character selection"></a><br><a href="docs/screenshots/14812/in-game.png"><img src="docs/screenshots/14812/in-game.png" width="180" alt="Build 14812 in game"></a> |
 
-| Build 49284 | Build 167409 | Build 204489 |
+| Build 49284<br>05-26-2015 | Build 167409<br>08-23-2024 | Build 204489<br>07-22-2026 |
 | :---: | :---: | :---: |
 | <a href="docs/screenshots/49284/character-selection.png"><img src="docs/screenshots/49284/character-selection.png" width="180" alt="Build 49284 character selection"></a><br><a href="docs/screenshots/49284/in-game.png"><img src="docs/screenshots/49284/in-game.png" width="180" alt="Build 49284 in game"></a> | <a href="docs/screenshots/167409/character-selection.png"><img src="docs/screenshots/167409/character-selection.png" width="180" alt="Build 167409 character selection"></a><br><a href="docs/screenshots/167409/in-game.png"><img src="docs/screenshots/167409/in-game.png" width="180" alt="Build 167409 in game"></a> | <a href="docs/screenshots/204489/character-selection.png"><img src="docs/screenshots/204489/character-selection.png" width="180" alt="Build 204489 character selection"></a><br><a href="docs/screenshots/204489/in-game.png"><img src="docs/screenshots/204489/in-game.png" width="180" alt="Build 204489 in game"></a> |
 
@@ -137,7 +138,10 @@ Enter a password at the prompt. Accounts, characters and saved positions are sto
 in `state/`. Add `--force` to update an existing password, or use `--list` with
 `--build` to list accounts.
 
-**Passwords are stored in plain text. Use a password that is not used elsewhere.**
+> [!WARNING]
+> NEVER use an ArenaNet account or password to connect to Glide Aholic or any
+> unofficial server, under any circumstances. Create separate local credentials.
+> Passwords are stored in plain text. Use a password that is not used elsewhere.
 
 ### 4. Start the server
 
@@ -209,6 +213,43 @@ Enter commands in game chat. `.help` lists commands available for the current bu
 | `.unmount` | Dismount. | — | — | — | — | — | ✓ | ✓ |
 
 Glider and mount IDs must exist in the local catalog.
+
+## FAQ
+
+### Where can I get the client builds?
+
+Glide Aholic does not distribute game clients or provide download links. Do not
+ask for builds or instructions on obtaining them.
+
+### Does it support Retail?
+
+No. The project stays months behind the live game. Only the exact builds listed
+in [Supported clients](#supported-clients) are supported.
+
+### Is this the full game?
+
+No. The focus is local exploration, characters, movement and multiplayer chat.
+Combat is experimental, and available features depend on the client build.
+
+### Can I use my ArenaNet account or characters?
+
+No. NEVER use an ArenaNet account or password to connect to Glide Aholic or any
+unofficial server, under any circumstances. Create separate local credentials
+with `glide-accounts.exe`. Official accounts and characters are not used by Glide.
+
+### Can players on different builds share a server?
+
+No. All connected clients must match the server's build.
+
+### Why is my executable rejected when the build number matches?
+
+Executable profiles also check SHA-256. A different executable needs its own
+verified profile.
+
+### Why does a map appear in the catalog but fail to load?
+
+A catalog entry does not include the map's assets. The matching resources must
+exist in the local game installation.
 
 ## Components
 
