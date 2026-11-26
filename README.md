@@ -1,9 +1,9 @@
 <div align="center">
 
-<h1><img src="docs/assets/promo.png" width="960" alt="Glide Aholic — illustrated rocket logo and a gliding adventurer"></h1>
+<h1><img src="docs/assets/promo.png" width="960" alt="Glide Aholic — a gliding adventurer"></h1>
 
 <p>
-Glide Aholic is a local server for seven specific Guild Wars 2 client builds.<br>
+Glide Aholic is a local server for seven specific supported client builds.<br>
 It implements login, character creation and saves, map exploration, movement and multiplayer chat.<br>
 Combat is experimental.
 </p>
