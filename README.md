@@ -271,6 +271,11 @@ Generated files are kept in `bin/` and `build/`. `data/` contains prepared catal
 and resources, `runtime/` holds the launcher's game working folders, and `state/`
 contains accounts and saves.
 
+## Protocol documentation
+
+[Packet reference](docs/protocol/README.md): packet layouts by build, field types
+and related messages.
+
 ## Development
 
 Python is required for the quality tools and distribution checks.

@@ -64,7 +64,9 @@ $releaseFiles.Add('bin/Win32/Release/inject32.exe')
 foreach ($releaseDocument in @('LICENSE','THIRD_PARTY_NOTICES.md','README.md','docs/assets/promo.png','server/server.cfg','vendor/minhook/LICENSE.txt')) {
     $releaseFiles.Add($releaseDocument)
 }
-$releaseFiles.Add('docs/SCREENSHOTS.md')
+foreach ($releaseProtocolDocument in (Get-Content -LiteralPath (Join-Path $releaseRoot 'release-files.txt') | Where-Object { $_ -match '^docs/protocol/' })) {
+    $releaseFiles.Add($releaseProtocolDocument)
+}
 foreach ($releaseBuild in $releaseBuilds) {
     $releaseFiles.Add("docs/screenshots/$releaseBuild/character-selection.png")
     $releaseFiles.Add("docs/screenshots/$releaseBuild/in-game.png")
@@ -137,7 +139,7 @@ foreach ($releasePath in $releaseTracked) {
         $releasePath -match '\.(?:pem|key|p12|pfx|dmp|pcap|pcapng|har|db|sqlite|sqlite3)$') {
         throw "Private configuration, credentials or local data cannot be packaged: $releasePath"
     }
-    if ($releasePath -notmatch '^(?:(?:common|builds|server|client|launcher|catalog|accounts|inject32|vendor|\.github)/|(?:scripts/check_distribution\.py|docs/assets/promo\.png|docs/SCREENSHOTS\.md|docs/screenshots/(?:14075|14422|14505|14812|49284|167409|204489)/(?:character-selection|in-game)\.png|quality\.ps1|\.clang-format|README\.md|LICENSE|THIRD_PARTY_NOTICES\.md|build\.bat|release\.ps1|release-files\.txt|glide\.props|GlideAholic\.sln|\.gitignore|\.gitattributes)$)') {
+    if ($releasePath -notmatch '^(?:(?:common|builds|server|client|launcher|catalog|accounts|inject32|vendor|\.github)/|(?:scripts/check_distribution\.py|docs/assets/promo\.png|docs/protocol/(?:(?:README|encoding|transport)\.md|(?:14075|14422|14505|14812|49284|167409|204489)/(?:README\.md|(?:auth|game|sts)/(?:c2s|s2c)/[a-z0-9-]+\.md))|docs/screenshots/(?:14075|14422|14505|14812|49284|167409|204489)/(?:character-selection|in-game)\.png|quality\.ps1|\.clang-format|README\.md|LICENSE|THIRD_PARTY_NOTICES\.md|build\.bat|release\.ps1|release-files\.txt|glide\.props|GlideAholic\.sln|\.gitignore|\.gitattributes)$)') {
         throw "Unapproved source path: $releasePath"
     }
     if ($releasePath -match '\.(?:exe|dll|dat|raw|compressed|bxml|enc|bin|pdb|zip)$' -or $releasePath -match '^(?:acceptance|research|runtime|state|data|tools|bin|build)/') {
